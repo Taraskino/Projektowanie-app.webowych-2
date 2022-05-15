@@ -12,10 +12,8 @@ import {
   styleUrls: ["./categories.component.css"],
 })
 export class CategoriesComponent implements OnInit {
-  faTrash = faTrash;
-  faGear = faGear;
-  faPlay = faPlay;
   faPlus = faPlus;
+  catName = "jakis tekst";
 
   constructor() {}
 
