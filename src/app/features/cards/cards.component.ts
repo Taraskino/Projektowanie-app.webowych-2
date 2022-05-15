@@ -24,7 +24,7 @@ export class CardsComponent implements OnInit {
   constructor(
     private categoryService: CategoriesService,
     private activeRoute: ActivatedRoute,
-    private cardServise: CardsService
+    private cardsService: CardsService
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class CardsComponent implements OnInit {
           .getCategory(id)
           .subscribe(category => (this.category = category));
 
-        this.cardServise
+        this.cardsService
           .getCardsForCategory(id)
           .subscribe(cards => (this.cards = cards));
       }
@@ -45,7 +45,7 @@ export class CardsComponent implements OnInit {
 
   addCard() {
     if (this.category.id) {
-      this.cardServise
+      this.cardsService
         .addCard(this.category.id, {
           word: this.word,
           translation: this.translation,
@@ -59,7 +59,7 @@ export class CardsComponent implements OnInit {
   }
   removeCard(card: Card) {
     if (card.id && this.category.id) {
-      this.cardServise
+      this.cardsService
         .removeCard(this.category.id, card.id)
         .subscribe(() => this.cards.splice(this.cards.indexOf(card), 1));
     }
