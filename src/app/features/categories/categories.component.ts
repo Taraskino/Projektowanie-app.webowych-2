@@ -26,4 +26,8 @@ export class CategoriesComponent implements OnInit {
     this.categories.push({ name: this.newCategoryName });
     this.newCategoryName = "";
   }
+
+  removeCategory(category: Category) {
+    this.categories.splice(this.categories.indexOf(category), 1);
+  }
 }

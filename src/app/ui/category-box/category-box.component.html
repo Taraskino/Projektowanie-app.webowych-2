@@ -1,7 +1,7 @@
 <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-card-body uk-flex uk-flex-between uk-margin">
   <span>{{categoryName}}</span>
   <div>
-    <button class="uk-button uk-button-small uk-border-pill">
+    <button class="uk-button uk-button-small uk-border-pill" (click)="emitRemove()">
       <fa-icon [icon]="faTrash"></fa-icon>
     </button>
     <button class="uk-button uk-button-small uk-border-pill uk-margin-small-left">
