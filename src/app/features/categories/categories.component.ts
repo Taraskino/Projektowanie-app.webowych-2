@@ -5,6 +5,7 @@ import {
   faPlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import { Category } from "../../models/category-model";
 
 @Component({
   selector: "app-categories",
@@ -13,9 +14,16 @@ import {
 })
 export class CategoriesComponent implements OnInit {
   faPlus = faPlus;
-  catName = "jakis tekst";
+  newCategoryName = "";
+
+  categories: Category[] = [{ name: "Dom" }, { name: "Rodzina" }];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  addCategory() {
+    this.categories.push({ name: this.newCategoryName });
+    this.newCategoryName = "";
+  }
 }
