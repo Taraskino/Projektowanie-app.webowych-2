@@ -1,1 +1,38 @@
-<p>cards works!</p>
+<div class="uk-section">
+  <div class="uk-container uk-container-small">
+    <button class="uk-button uk-border-pill" [routerLink]="['']">Powrót</button>
+    <h1 class="uk-heading-bullet">{{category.name}}</h1>
+    <div *ngFor="let card of cards" class="uk-card uk-card-small uk-card-default uk-card-hover uk-card-body uk-flex uk-flex-between uk-margin">
+      <div>
+        <span>{{card.word}}</span>
+        <hr class="uk-margin-remove" />
+        <span class="uk-text-bold">{{card.translation}}</span>
+      </div>
+      <div>
+        <button
+          (click)="removeCard(card)"
+          class="uk-button uk-button-small uk-border-pill">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="uk-grid-small" uk-grid>
+      <div class="uk-width-1-2">
+        <input
+          [(ngModel)]="translation"
+          type="text"
+          class="uk-input"
+          placeholder="Słówko"/>
+      </div>
+      <div class="uk-width-1-2">
+        <input
+          type="text"
+          class="uk-input"
+          placeholder="Tłumaczenie" />
+      </div>
+    </div>
+    <button class="uk-button uk-border-pill uk-margin" (click)="addCard()">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+  </div>
+</div>
