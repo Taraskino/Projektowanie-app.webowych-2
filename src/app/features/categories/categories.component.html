@@ -1,7 +1,7 @@
 <div class="uk-section">
   <div class="uk-container uk-container-small">
     <app-category-box *ngFor="let category of categories"
-                      [categoryName]="category.name"
+                      [category]="category"
                       (removeEvent)="removeCategory(category)"
     >  </app-category-box>
         <input [(ngModel)]="newCategoryName"(keyup.enter)="addCategory()"  type="text" class="uk-input" placeholder="Nazwa Kategorii">

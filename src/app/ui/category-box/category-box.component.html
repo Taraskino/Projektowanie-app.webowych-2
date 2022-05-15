@@ -1,13 +1,13 @@
 <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-card-body uk-flex uk-flex-between uk-margin">
-  <span>{{categoryName}}</span>
+  <span>{{category.name}}</span>
   <div>
     <button class="uk-button uk-button-small uk-border-pill" (click)="emitRemove()">
       <fa-icon [icon]="faTrash"></fa-icon>
     </button>
-    <button class="uk-button uk-button-small uk-border-pill uk-margin-small-left">
+    <button class="uk-button uk-button-small uk-border-pill uk-margin-small-left" [routerLink]="['cards/', category.id]">
       <fa-icon [icon]="faGear"></fa-icon>
     </button>
-    <button class="uk-button uk-button-small uk-border-pill uk-margin-small-left">
+    <button class="uk-button uk-button-small uk-border-pill uk-margin-small-left" [routerLink]="['game/', category.id]">
       <fa-icon [icon]="faPlay"></fa-icon>
     </button>
   </div>
