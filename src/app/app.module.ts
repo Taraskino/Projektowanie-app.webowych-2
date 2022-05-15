@@ -8,8 +8,9 @@ import { NavigationComponent } from "./ui/navigation/navigation.component";
 import { CategoriesComponent } from "./features/categories/categories.component";
 import { CategoryBoxComponent } from "./ui/category-box/category-box.component";
 import { FormsModule } from "@angular/forms";
-import { CardsComponent } from './features/cards/cards.component';
-import { GameComponent } from './features/game/game.component';
+import { CardsComponent } from "./features/cards/cards.component";
+import { GameComponent } from "./features/game/game.component";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { GameComponent } from './features/game/game.component';
     CardsComponent,
     GameComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
